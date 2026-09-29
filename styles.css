@@ -446,3 +446,27 @@ button,a{transition:all .2s ease}
   .chart-live .bar { transition:none !important; transform:scaleY(1) !important; }
   .jo-sticky-cta,.jo-chat-panel { transition:none !important; }
 }
+
+.jo-chat-wa {
+  display:block;
+  margin:0 12px 9px;
+  padding:9px 12px;
+  border:1px solid #c8e8de;
+  border-radius:12px;
+  background:#effaf6;
+  color:#197458;
+  text-align:center;
+  text-decoration:none;
+  font-size:10px;
+  font-weight:850;
+}
+.jo-chat-wa:hover { background:#e3f7f0; }
+.jo-chat-launcher:focus-visible,
+.jo-chat-close:focus-visible,
+.jo-chat-quick button:focus-visible,
+.jo-chat-send:focus-visible,
+.jo-chat-wa:focus-visible,
+.jo-sticky-cta:focus-visible {
+  outline:3px solid rgba(39,195,154,.35);
+  outline-offset:2px;
+}
