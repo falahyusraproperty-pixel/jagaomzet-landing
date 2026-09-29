@@ -47,7 +47,7 @@
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: message, history: history.slice(-8) })
+        body: JSON.stringify({ message: message, history: history.slice(0, -1).slice(-8) })
       });
 
       if (!response.ok) throw new Error("chat endpoint unavailable");
@@ -209,7 +209,7 @@
         '<input class="jo-chat-input" type="text" maxlength="500" autocomplete="off" placeholder="Tulis pertanyaan..." aria-label="Pertanyaan tentang JagaOmzet" />' +
         '<button class="jo-chat-send" type="submit" aria-label="Kirim">↑</button>' +
       '</form>' +
-      '<div class="jo-chat-status">Jawaban berdasarkan informasi JagaOmzet.</div>'
+      '<div class="jo-chat-status">Jawaban berdasarkan informasi JagaOmzet.</div><a class="jo-chat-wa" href="https://wa.me/6282299582026?text=Halo%2C%20saya%20tertarik%20mencoba%20JagaOmzet%20Gratis%2014%20Hari." target="_blank" rel="noopener">💬 Lanjut ke WhatsApp</a>'
     );
 
     document.body.appendChild(launcher);
