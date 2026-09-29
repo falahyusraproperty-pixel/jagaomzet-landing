@@ -5,7 +5,7 @@
 
   const localKnowledge = [
     { keys: ["trial", "gratis", "coba", "free"], answer: "JagaOmzet bisa dicoba gratis selama 14 hari. Tidak perlu kartu kredit. Setelah itu Anda bisa memilih paket yang sesuai kebutuhan." },
-    { keys: ["harga", "pricing", "biaya", "care", "bestie", "sultan"], answer: "Untuk Partner: Care Rp99.000/bulan, Bestie Rp199.000/bulan, dan Sultan Rp299.000/bulan, dengan biaya Partner Rp999.000 sekali bayar. Ada juga Flex tanpa biaya aktivasi: Care Rp399.000, Bestie Rp599.000, Sultan Rp799.000 per bulan." },
+    { keys: ["harga", "pricing", "biaya", "care", "bestie", "sultan"], answer: "Untuk Partner: Care Rp99.000/bulan dan Bestie Rp199.000/bulan. Sultan menggunakan harga negotiable sesuai kebutuhan. Ada juga Flex tanpa biaya aktivasi: Care Rp399.000/bulan, Bestie Rp599.000/bulan, dan Sultan negotiable." },
     { keys: ["cocok", "usaha", "bisnis", "restoran", "cafe", "kafe", "salon", "barbershop", "laundry", "bengkel", "klinik"], answer: "JagaOmzet cocok untuk bisnis yang ingin memahami pelanggan dan memantau feedback, terutama bisnis dengan outlet seperti café, restoran, salon, barbershop, laundry, bengkel, dan klinik kecantikan." },
     { keys: ["kasir", "pos", "point of sale"], answer: "Bukan aplikasi kasir. Fokus JagaOmzet adalah feedback pelanggan, database pelanggan, monitoring outlet, laporan, Google Review, dan aktivitas untuk membantu pelanggan kembali." },
     { keys: ["cara kerja", "cara", "bagaimana", "scan", "qr"], answer: "Alurnya sederhana: pelanggan scan QR JagaOmzet → memberi feedback → data masuk dashboard → owner melihat pola dan menentukan tindakan." },
