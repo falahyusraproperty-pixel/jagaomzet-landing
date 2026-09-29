@@ -153,6 +153,100 @@
     });
   }
 
+  function initInteractiveDemo() {
+    const demo = document.querySelector(".aha-interactive");
+    if (!demo) return;
+
+    const choices = demo.querySelectorAll("[data-feedback]");
+    const customerIcon = demo.querySelector('[data-role="customer-icon"]');
+    const customerText = demo.querySelector('[data-role="customer-text"]');
+    const customerSub = demo.querySelector('[data-role="customer-sub"]');
+    const captureTitle = demo.querySelector('[data-role="capture-title"]');
+    const captureSub = demo.querySelector('[data-role="capture-sub"]');
+    const dashboardTitle = demo.querySelector('[data-role="dashboard-title"]');
+    const dashboardSub = demo.querySelector('[data-role="dashboard-sub"]');
+    const actionIcon = demo.querySelector('[data-role="action-icon"]');
+    const actionTitle = demo.querySelector('[data-role="action-title"]');
+    const actionSub = demo.querySelector('[data-role="action-sub"]');
+    const resultTitle = demo.querySelector('[data-role="result-title"]');
+    const resultText = demo.querySelector('[data-role="result-text"]');
+    const result = demo.querySelector(".aha-result");
+
+    const states = {
+      positive: {
+        icon: "😊",
+        text: "“Pelayanannya cepat.”",
+        sub: "Feedback positif masuk",
+        capture: "+1 Feedback baru",
+        captureSub: "Data tercatat otomatis",
+        dashboard: "Outlet A • 92%",
+        dashboardSub: "Kepuasan pelanggan terlihat",
+        actionIcon: "↗",
+        action: "Balas Review • Follow-up",
+        actionSub: "Pengalaman positif bisa dimanfaatkan",
+        resultTitle: "Feedback positif terpantau.",
+        resultText: "Owner tahu pengalaman pelanggan dan bisa menindaklanjutinya."
+      },
+      neutral: {
+        icon: "😐",
+        text: "“Rasanya oke, tapi bisa lebih cepat.”",
+        sub: "Feedback netral masuk",
+        capture: "+1 Feedback baru",
+        captureSub: "Data dan komentar tercatat",
+        dashboard: "Outlet A • 78%",
+        dashboardSub: "Ada pola yang perlu diperhatikan",
+        actionIcon: "▣",
+        action: "Kupon • Evaluasi",
+        actionSub: "Beri alasan untuk kembali",
+        resultTitle: "Ada sinyal yang perlu diperhatikan.",
+        resultText: "Owner melihat area yang masih bisa diperbaiki sebelum pelanggan berhenti datang."
+      },
+      negative: {
+        icon: "😞",
+        text: "“Pelayanannya terlalu lama.”",
+        sub: "Feedback kurang puas masuk",
+        capture: "+1 Komplain baru",
+        captureSub: "Masuk ke daftar yang perlu ditindak",
+        dashboard: "Outlet A • 64%",
+        dashboardSub: "Masalah outlet lebih cepat terlihat",
+        actionIcon: "!",
+        action: "Tindak Lanjut • Selesai",
+        actionSub: "Komplain bisa dipantau statusnya",
+        resultTitle: "Masalah tidak lagi diam-diam hilang.",
+        resultText: "Owner tahu ada komplain dan bisa menindaklanjuti sebelum masalah menjadi pelanggan yang hilang."
+      }
+    };
+
+    function render(key) {
+      const state = states[key] || states.positive;
+      choices.forEach(button => button.classList.toggle("is-active", button.dataset.feedback === key));
+
+      customerIcon.textContent = state.icon;
+      customerText.textContent = state.text;
+      customerSub.textContent = state.sub;
+      captureTitle.textContent = state.capture;
+      captureSub.textContent = state.captureSub;
+      dashboardTitle.textContent = state.dashboard;
+      dashboardSub.textContent = state.dashboardSub;
+      actionIcon.textContent = state.actionIcon;
+      actionTitle.textContent = state.action;
+      actionSub.textContent = state.actionSub;
+      resultTitle.textContent = state.resultTitle;
+      resultText.textContent = state.resultText;
+
+      demo.classList.remove("is-changing");
+      void demo.offsetWidth;
+      demo.classList.add("is-changing");
+      window.setTimeout(() => demo.classList.remove("is-changing"), 320);
+    }
+
+    choices.forEach(button => {
+      button.addEventListener("click", () => render(button.dataset.feedback));
+    });
+
+    render("positive");
+  }
+
   function initStickyCta() {
     const hero = document.querySelector(".hero");
     if (!hero) return;
@@ -318,6 +412,7 @@
   function init() {
     initReveal();
     initHeroMotion();
+    initInteractiveDemo();
     initStickyCta();
     initChatbot();
   }
