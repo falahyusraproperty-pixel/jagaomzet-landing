@@ -201,46 +201,61 @@
           </div>
         </div>
 
-        <div class="aha-demo" aria-label="Simulasi bagaimana feedback pelanggan menjadi tindakan">
+        <div class="aha-demo aha-interactive" aria-label="Demo interaktif bagaimana feedback pelanggan menjadi tindakan">
           <div class="aha-head">
             <div>
-              <div class="eyebrow"><span class="eyebrow-dot"></span> Lihat sistemnya bekerja</div>
+              <div class="eyebrow"><span class="eyebrow-dot"></span> Coba sendiri</div>
               <h3>Dari suara pelanggan menjadi <span>tindakan owner.</span></h3>
-              <p>Satu feedback yang biasanya hilang begitu saja, sekarang berubah menjadi informasi yang bisa ditindaklanjuti.</p>
+              <p>Klik salah satu feedback di bawah. Lihat bagaimana satu respons pelanggan bisa langsung berubah menjadi informasi yang berguna bagi owner.</p>
             </div>
-            <div class="aha-live"><i></i> Live simulation</div>
+            <div class="aha-live"><i></i> Live demo</div>
           </div>
 
-          <div class="aha-track">
-            <div class="aha-node">
-              <div class="aha-icon">😊</div>
+          <div class="aha-feedback-picker">
+            <span class="aha-picker-label">Pelanggan berkata:</span>
+            <div class="aha-feedback-buttons" role="group" aria-label="Pilih feedback pelanggan">
+              <button type="button" class="aha-choice is-active" data-feedback="positive">😊 Puas</button>
+              <button type="button" class="aha-choice" data-feedback="neutral">😐 Biasa</button>
+              <button type="button" class="aha-choice" data-feedback="negative">😞 Kurang puas</button>
+            </div>
+          </div>
+
+          <div class="aha-track aha-track-interactive">
+            <div class="aha-node aha-customer-node">
+              <div class="aha-icon" data-role="customer-icon">😊</div>
               <small>PELANGGAN</small>
-              <strong>“Pelayanannya cepat.”</strong>
-              <span>Feedback positif masuk</span>
+              <strong data-role="customer-text">“Pelayanannya cepat.”</strong>
+              <span data-role="customer-sub">Feedback positif masuk</span>
             </div>
             <div class="aha-connector"><i></i></div>
             <div class="aha-node">
               <div class="aha-icon">＋</div>
               <small>JAGAOMZET</small>
-              <strong>+1 Feedback baru</strong>
-              <span>Data tercatat otomatis</span>
+              <strong data-role="capture-title">+1 Feedback baru</strong>
+              <span data-role="capture-sub">Data tercatat otomatis</span>
             </div>
             <div class="aha-connector"><i></i></div>
             <div class="aha-node">
               <div class="aha-icon">▤</div>
               <small>DASHBOARD</small>
-              <strong>Outlet A • 92%</strong>
-              <span>Pola feedback terlihat</span>
+              <strong data-role="dashboard-title">Outlet A • 92%</strong>
+              <span data-role="dashboard-sub">Pola feedback terlihat</span>
             </div>
             <div class="aha-connector"><i></i></div>
             <div class="aha-node aha-node-action">
-              <div class="aha-icon">↗</div>
+              <div class="aha-icon" data-role="action-icon">↗</div>
               <small>ACTION OWNER</small>
-              <strong>Follow-up • Promo</strong>
-              <span>Data jadi keputusan</span>
+              <strong data-role="action-title">Balas Review • Follow-up</strong>
+              <span data-role="action-sub">Data jadi keputusan</span>
             </div>
           </div>
-        </div>
+
+          <div class="aha-result" aria-live="polite">
+            <span class="aha-result-dot"></span>
+            <strong data-role="result-title">Feedback positif terpantau.</strong>
+            <span data-role="result-text">Owner tahu pengalaman pelanggan dan bisa menindaklanjutinya.</span>
+          </div>
+        </div>        </div>
       </div>
     </section>
 
