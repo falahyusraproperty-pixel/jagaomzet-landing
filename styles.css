@@ -470,3 +470,36 @@ button,a{transition:all .2s ease}
   outline:3px solid rgba(39,195,154,.35);
   outline-offset:2px;
 }
+
+/* Readability pass: larger body copy while keeping the existing premium hierarchy. */
+.hero-lead{font-size:19px}
+.section-heading p{font-size:17px}
+.flow-step p{font-size:14px}
+.feature-card p{font-size:14px}
+.split-lead{font-size:17px}
+.trial-banner p{font-size:14px}
+.price-card>p{font-size:14px}
+.price-card li{font-size:13.5px}
+.price-note{font-size:11px}
+.flex-head p{font-size:14px}
+.flex-card a{font-size:12px}
+.economy-note span{font-size:12px}
+.faq-intro{font-size:15px}
+.faq-list p{font-size:13.5px}
+.cta-panel p{font-size:16px}
+.footer-desc{font-size:12px}
+.footer-col a,.footer-col p{font-size:12px}
+
+@media (max-width: 560px){
+  .hero-lead{font-size:17px}
+  .section-heading p{font-size:16px}
+  .flow-step p{font-size:12.5px}
+  .feature-card p{font-size:13.5px}
+  .split-lead{font-size:15px}
+  .trial-banner p{font-size:13px}
+  .price-card>p{font-size:13px}
+  .price-card li{font-size:12.5px}
+  .faq-intro{font-size:14px}
+  .faq-list p{font-size:13px}
+  .cta-panel p{font-size:14px}
+}
