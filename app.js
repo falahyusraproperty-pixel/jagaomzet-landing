@@ -5,16 +5,16 @@
 
   const localKnowledge = [
     { keys: ["trial", "gratis", "coba", "free"], answer: "JagaOmzet bisa dicoba gratis selama 14 hari. Tidak perlu kartu kredit. Setelah itu Anda bisa memilih paket yang sesuai kebutuhan." },
-    { keys: ["harga", "pricing", "biaya", "care", "bestie", "sultan"], answer: "Untuk Partner: Care Rp99.000/bulan dan Bestie Rp199.000/bulan. Sultan menggunakan harga negotiable sesuai kebutuhan. Ada juga Flex tanpa biaya aktivasi: Care Rp399.000/bulan, Bestie Rp599.000/bulan, dan Sultan negotiable." },
+    { keys: ["harga", "pricing", "biaya", "basic", "pro"], answer: "Basic Rp149.000/bulan. Pro Rp299.000/bulan dan paling cocok untuk multi-outlet. Outlet tambahan Rp99.000/outlet/bulan." },
     { keys: ["area", "wilayah", "lokasi", "cover", "cakupan", "indonesia", "surabaya", "sidoarjo", "jawa", "luar kota"], answer: "JagaOmzet dapat digunakan untuk bisnis di seluruh Indonesia. Tidak terbatas pada kota atau wilayah tertentu." },
     { keys: ["cocok", "usaha", "bisnis", "restoran", "cafe", "kafe", "salon", "barbershop", "laundry", "bengkel", "klinik"], answer: "JagaOmzet cocok untuk bisnis yang ingin memahami pelanggan dan memantau feedback, terutama bisnis dengan outlet seperti café, restoran, salon, barbershop, laundry, bengkel, dan klinik kecantikan." },
     { keys: ["kasir", "pos", "point of sale"], answer: "Bukan aplikasi kasir. Fokus JagaOmzet adalah feedback pelanggan, database pelanggan, monitoring outlet, laporan, Google Review, dan aktivitas untuk membantu pelanggan kembali." },
     { keys: ["cara kerja", "cara", "bagaimana", "scan", "qr"], answer: "Alurnya sederhana: pelanggan scan QR JagaOmzet → memberi feedback → data masuk dashboard → owner melihat pola dan menentukan tindakan." },
     { keys: ["outlet", "multi outlet", "banyak outlet", "cabang"], answer: "JagaOmzet dirancang untuk owner yang ingin memantau kondisi beberapa outlet dari satu dashboard. Paket awal dimulai dari 1 outlet dan outlet tambahan dapat ditambahkan." },
     { keys: ["database", "pelanggan", "customer"], answer: "Feedback dapat menjadi data pelanggan yang lebih terstruktur sehingga owner punya bahan untuk follow-up, promo, dan aktivitas repeat order." },
-    { keys: ["google", "review", "maps"], answer: "Feedback positif punya jalur untuk diarahkan ke Google Maps, dan JagaOmzet menyediakan template balasan agar prosesnya lebih praktis." },
+    { keys: ["google", "review", "maps"], answer: "JagaOmzet membantu owner membalas ulasan Google positif maupun negatif dengan template yang konsisten." },
     { keys: ["kupon", "promo", "return", "kembali"], answer: "JagaOmzet menyediakan fitur kupon sebagai salah satu cara memberi alasan kepada pelanggan untuk kembali." },
-    { keys: ["partner", "flex"], answer: "Partner memiliki biaya aktivasi sekali bayar dan harga bulanan khusus. Flex tidak memiliki biaya aktivasi, tetapi harga bulanannya lebih tinggi." },
+    { keys: ["partner", "flex"], answer: "JagaOmzet sekarang menggunakan dua paket publik: Basic dan Pro." },
     { keys: ["daftar", "mulai", "whatsapp", "wa"], answer: "Untuk mulai trial 14 hari, Anda bisa menghubungi tim JagaOmzet melalui WhatsApp di 0822 9958 2026." }
   ];
 
@@ -123,32 +123,12 @@
       requestAnimationFrame(() => requestAnimationFrame(() => chart.classList.add("is-live")));
     }
 
-    const values = document.querySelectorAll(".metric-card strong");
-    const targets = [428, 1284, 91];
-
-    values.forEach((el, index) => {
-      const target = targets[index];
-      if (typeof target !== "number") return;
-
-      const suffix = index === 2 ? "%" : "";
-      const duration = 1100;
-      const start = performance.now();
-
-      const tick = now => {
-        const progress = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.round(target * eased).toLocaleString("id-ID") + suffix;
-        if (progress < 1) requestAnimationFrame(tick);
-      };
-
-      el.textContent = "0" + suffix;
-      window.setTimeout(() => requestAnimationFrame(tick), 350 + index * 110);
-    });
-
+    // Dashboard demo uses fixed mock numbers. Do not animate from zero.
     const ctas = document.querySelectorAll('a[href*="wa.me"]');
     ctas.forEach((cta, index) => {
       const text = normalize(cta.textContent);
       if (text.includes("coba gratis")) cta.classList.add("cta-pulse");
+      if (text.includes("pilot")) cta.classList.add("pilot-cta");
       if (index === 0) cta.setAttribute("aria-label", "Coba JagaOmzet gratis 14 hari");
     });
   }
