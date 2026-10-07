@@ -1,7 +1,16 @@
 (() => {
   "use strict";
 
-  const WA_URL = "https://wa.me/6282299582026?text=Halo%2C%20saya%20tertarik%20Paket%20Pelanggan%20Balik%2030%20Hari%20untuk%20outlet%20saya.";
+  const JO_CONFIG = {
+    hargaNormal: "Rp990.000",
+    hargaPerintis: "Rp490.000",
+    slotPerintis: "5",
+    targetNomor: "minimal 50 nomor pelanggan",
+    lanjutBulanan: "Rp499.000/bulan",
+    waLink: "https://wa.me/6282299582026?text=Halo%2C%20saya%20tertarik%20Paket%20Pelanggan%20Balik%2030%20Hari%20untuk%20outlet%20saya.",
+    pilotWaLink: "https://wa.me/6282299582026?text=Halo%2C%20saya%20mau%20daftar%20outlet%20pilot%20JagaOmzet.%20Usaha%20saya:%20[isi%20jenis%20outlet,%20mis.%20caf%C3%A9%2Fsalon%2Fbarbershop]"
+  };
+  const WA_URL = JO_CONFIG.waLink;
 
   const localKnowledge = [
     { keys: ["trial", "gratis", "coba", "free"], answer: "Paket pertama berjalan 30 hari. Kami yang pasang, jalankan, kirim promo pertama, dan laporkan hasilnya." },
@@ -373,6 +382,7 @@
   }
 
   function init() {
+    applyConfig();
     initReveal();
     initHeroMotion();
     initInteractiveDemo();
