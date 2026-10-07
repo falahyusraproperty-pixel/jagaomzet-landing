@@ -1,11 +1,11 @@
 (() => {
   "use strict";
 
-  const WA_URL = "https://wa.me/6282299582026?text=Halo%2C%20saya%20tertarik%20mencoba%20JagaOmzet%20Gratis%2014%20Hari.";
+  const WA_URL = "https://wa.me/6282299582026?text=Halo%2C%20saya%20tertarik%20Paket%20Pelanggan%20Balik%2030%20Hari%20untuk%20outlet%20saya.";
 
   const localKnowledge = [
-    { keys: ["trial", "gratis", "coba", "free"], answer: "JagaOmzet bisa dicoba gratis selama 14 hari. Tidak perlu kartu kredit. Setelah itu Anda bisa memilih paket yang sesuai kebutuhan." },
-    { keys: ["harga", "pricing", "biaya", "basic", "pro"], answer: "Basic Rp149.000/bulan. Pro Rp299.000/bulan dan paling cocok untuk multi-outlet. Outlet tambahan Rp99.000/outlet/bulan." },
+    { keys: ["trial", "gratis", "coba", "free"], answer: "Paket pertama berjalan 30 hari. Kami yang pasang, jalankan, kirim promo pertama, dan laporkan hasilnya." },
+    { keys: ["harga", "pricing", "biaya", "basic", "pro"], answer: "Paket Pelanggan Balik 30 Hari harga perintis Rp490.000 sekali bayar, harga normal Rp990.000. Lanjut Bulanan opsional Rp499.000/bulan. Multi-outlet bisa dibicarakan." },
     { keys: ["area", "wilayah", "lokasi", "cover", "cakupan", "indonesia", "surabaya", "sidoarjo", "jawa", "luar kota"], answer: "JagaOmzet dapat digunakan untuk bisnis di seluruh Indonesia. Tidak terbatas pada kota atau wilayah tertentu." },
     { keys: ["cocok", "usaha", "bisnis", "restoran", "cafe", "kafe", "salon", "barbershop", "laundry", "bengkel", "klinik"], answer: "JagaOmzet cocok untuk bisnis yang ingin memahami pelanggan dan memantau feedback, terutama bisnis dengan outlet seperti café, restoran, salon, barbershop, laundry, bengkel, dan klinik kecantikan." },
     { keys: ["kasir", "pos", "point of sale"], answer: "Bukan aplikasi kasir. Fokus JagaOmzet adalah feedback pelanggan, database pelanggan, monitoring outlet, laporan, Google Review, dan aktivitas untuk membantu pelanggan kembali." },
@@ -15,12 +15,7 @@
     { keys: ["google", "review", "maps"], answer: "JagaOmzet membantu owner membalas ulasan Google positif maupun negatif dengan template yang konsisten." },
     { keys: ["kupon", "promo", "return", "kembali"], answer: "JagaOmzet menyediakan fitur kupon sebagai salah satu cara memberi alasan kepada pelanggan untuk kembali." },
     { keys: ["partner", "flex"], answer: "JagaOmzet sekarang menggunakan dua paket publik: Basic dan Pro." },
-    { keys: ["daftar", "mulai", "whatsapp", "wa"], answer: "Untuk mulai trial 14 hari, Anda bisa menghubungi tim JagaOmzet melalui WhatsApp di 0822 9958 2026." }
-  ];
-
-  function normalize(value) {
-    return String(value || "").toLowerCase().trim();
-  }
+    { keys: ["daftar", "mulai", "whatsapp", "wa"], answer: "Untuk mulai, chat WhatsApp JagaOmzet dan konsultasikan outlet Anda. Kami akan menjelaskan Paket Pelanggan Balik 30 Hari." }
 
   function localReply(message) {
     const text = normalize(message);
@@ -40,7 +35,7 @@
       }
     }
 
-    return best || "Saya bisa membantu menjelaskan JagaOmzet, trial 14 hari, harga, fitur, multi-outlet, database pelanggan, Google Review, kupon, dan cara mulai. Coba tulis pertanyaan yang lebih spesifik.";
+    return best || "Saya bisa membantu menjelaskan JagaOmzet, Paket 30 Hari, harga, fitur, multi-outlet, database pelanggan, Google Review, kupon, dan cara mulai. Coba tulis pertanyaan yang lebih spesifik.";
   }
 
   async function remoteReply(message, history) {
@@ -81,10 +76,9 @@
       ".flow-step",
       ".feature-card",
       ".split > div",
-      ".trial-banner",
-      ".price-card",
-      ".flex-card",
-      ".economy-note",
+      ".offer-card",
+      ".package-card",
+      ".gallery-card",
       ".faq-list details",
       ".cta-panel"
     ];
@@ -127,9 +121,9 @@
     const ctas = document.querySelectorAll('a[href*="wa.me"]');
     ctas.forEach((cta, index) => {
       const text = normalize(cta.textContent);
-      if (text.includes("coba gratis")) cta.classList.add("cta-pulse");
+      if (text.includes("konsultasi") || text.includes("ambil slot") || text.includes("chat whatsapp")) cta.classList.add("cta-pulse");
       if (text.includes("pilot")) cta.classList.add("pilot-cta");
-      if (index === 0) cta.setAttribute("aria-label", "Coba JagaOmzet gratis 14 hari");
+      if (index === 0) cta.setAttribute("aria-label", "Chat WhatsApp JagaOmzet");
     });
   }
 
@@ -228,24 +222,13 @@
   }
 
   function initStickyCta() {
-    const hero = document.querySelector(".hero");
-    if (!hero) return;
-
     const cta = createEl(
       "a",
-      { class: "jo-sticky-cta", href: WA_URL, "aria-label": "Coba JagaOmzet gratis 14 hari" },
-      "<strong>Coba 14 Hari Gratis</strong><span>→</span>"
+      { class: "jo-whatsapp-float", href: WA_URL, target: "_blank", rel: "noopener", "aria-label": "Chat WhatsApp JagaOmzet" },
+      "<span aria-hidden=\"true\">💬</span>"
     );
-
     document.body.appendChild(cta);
-
-    const update = () => {
-      const threshold = hero.offsetTop + hero.offsetHeight * 0.72;
-      cta.classList.toggle("is-visible", window.scrollY > threshold);
-    };
-
-    window.addEventListener("scroll", update, { passive: true });
-    update();
+    window.requestAnimationFrame(() => cta.classList.add("is-visible"));
   }
 
   function initChatbot() {
@@ -278,7 +261,7 @@
         '<button type="button" data-question="JagaOmzet itu apa?">JagaOmzet itu apa?</button>' +
         '<button type="button" data-question="Berapa harganya?">Harga</button>' +
         '<button type="button" data-question="Bisa untuk banyak outlet?">Multi-outlet</button>' +
-        '<button type="button" data-question="Bagaimana trialnya?">Trial 14 hari</button><button type="button" data-question="JagaOmzet bisa cover area mana?">Area layanan</button>' +
+        '<button type="button" data-question="Bagaimana Paket Pelanggan Balik 30 Hari bekerja?">Paket 30 hari</button><button type="button" data-question="JagaOmzet bisa cover area mana?">Area layanan</button>' +
       '</div>' +
       '<form class="jo-chat-form">' +
         '<input class="jo-chat-input" type="text" maxlength="500" autocomplete="off" placeholder="Tulis pertanyaan..." aria-label="Pertanyaan tentang JagaOmzet" />' +
@@ -334,7 +317,7 @@
 
     function addWelcome() {
       if (messagesEl.children.length) return;
-      addMessage("bot", "Halo. Saya JagaOmzet Assistant. Saya bisa menjelaskan fitur, harga, trial 14 hari, dan cara kerja JagaOmzet.");
+      addMessage("bot", "Halo. Saya JagaOmzet Assistant. Saya bisa menjelaskan Paket 30 Hari, cara kerja, harga, dan program multi-outlet.");
     }
 
     async function ask(question) {
