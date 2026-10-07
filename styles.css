@@ -713,7 +713,7 @@ button,a{transition:all .2s ease}
 .gallery-copy p{margin:7px 0 0;color:#748097;font-size:12px;line-height:1.6}
 .gallery-disclaimer{text-align:center;color:#8994a6;font-size:10px;font-weight:800;margin-top:14px}
 .jo-sticky-cta{display:none}
-.jo-whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:95;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:#0b1324;color:#fff;box-shadow:0 16px 38px rgba(11,19,36,.24);text-decoration:none;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s ease,transform .3s ease}
+.jo-whatsapp-float{position:fixed;right:20px;bottom:88px;z-index:95;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:#0b1324;color:#fff;box-shadow:0 16px 38px rgba(11,19,36,.24);text-decoration:none;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s ease,transform .3s ease}
 .jo-whatsapp-float.is-visible{opacity:1;pointer-events:auto;transform:translateY(0)}
 .jo-whatsapp-float:hover{transform:translateY(-3px)}
 .jo-whatsapp-float span{font-size:25px;line-height:1}
@@ -727,5 +727,5 @@ button,a{transition:all .2s ease}
 @media (max-width:560px){
   .offer-main h3{font-size:16px}
   .offer-timeline{grid-template-columns:1fr}
-  .jo-whatsapp-float{right:16px;bottom:16px;width:54px;height:54px}
+  .jo-whatsapp-float{right:16px;bottom:82px;width:54px;height:54px}
 }
