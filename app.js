@@ -7,7 +7,8 @@
     slotPerintis: "5",
     targetNomor: "minimal 50 nomor pelanggan",
     lanjutBulanan: "Rp350.000",
-    waLink: "https://wa.me/6282299582026?text=Halo%2C%20saya%20mau%20ambil%20Slot%20Perintis%20JagaOmzet.%20Usaha%20saya:%20[jenis%20outlet]"
+    waLink: "https://wa.me/6282299582026?text=Halo%2C%20saya%20mau%20ambil%20Slot%20Perintis%20JagaOmzet.%20Usaha%20saya:%20[jenis%20outlet]",
+    monthlyWaLink: "https://wa.me/6282299582026?text=Halo%2C%20saya%20ingin%20tanya%20Lanjutan%20Bulanan%20JagaOmzet%20untuk%20outlet%20saya."
   };
   const WA_URL = JO_CONFIG.waLink;
 
@@ -44,9 +45,7 @@
     });
 
     document.querySelectorAll('[data-jo-link="main"]').forEach(el => { el.href = JO_CONFIG.waLink; });
-    document.querySelectorAll('[data-jo-link="monthly"]').forEach(el => {
-      el.href = "https://wa.me/6282299582026?text=Halo%2C%20saya%20ingin%20tanya%20Lanjutan%20Bulanan%20JagaOmzet%20untuk%20outlet%20saya.";
-    });
+    document.querySelectorAll('[data-jo-link="monthly"]').forEach(el => { el.href = JO_CONFIG.monthlyWaLink; });
   }
 
   function localReply(message) {
@@ -154,7 +153,7 @@
     ctas.forEach((cta, index) => {
       const text = normalize(cta.textContent);
       if (text.includes("konsultasi") || text.includes("ambil slot") || text.includes("chat whatsapp")) cta.classList.add("cta-pulse");
-      if (text.includes("pilot")) cta.classList.add("pilot-cta");
+
       if (index === 0) cta.setAttribute("aria-label", "Chat WhatsApp JagaOmzet");
     });
   }
