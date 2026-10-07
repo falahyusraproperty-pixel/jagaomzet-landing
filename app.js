@@ -6,29 +6,52 @@
     hargaPerintis: "Rp490.000",
     slotPerintis: "5",
     targetNomor: "minimal 50 nomor pelanggan",
-    lanjutBulanan: "Rp499.000/bulan",
-    waLink: "https://wa.me/6282299582026?text=Halo%2C%20saya%20tertarik%20Paket%20Pelanggan%20Balik%2030%20Hari%20untuk%20outlet%20saya.",
-    pilotWaLink: "https://wa.me/6282299582026?text=Halo%2C%20saya%20mau%20daftar%20outlet%20pilot%20JagaOmzet.%20Usaha%20saya:%20[isi%20jenis%20outlet,%20mis.%20caf%C3%A9%2Fsalon%2Fbarbershop]"
+    lanjutBulanan: "Rp350.000",
+    waLink: "https://wa.me/6282299582026?text=Halo%2C%20saya%20mau%20ambil%20Slot%20Perintis%20JagaOmzet.%20Usaha%20saya:%20[jenis%20outlet]"
   };
   const WA_URL = JO_CONFIG.waLink;
 
   const localKnowledge = [
-    { keys: ["trial", "gratis", "coba", "free"], answer: "Paket pertama berjalan 30 hari. Kami yang pasang, jalankan, kirim promo pertama, dan laporkan hasilnya." },
-    { keys: ["harga", "pricing", "biaya", "basic", "pro"], answer: "Paket Pelanggan Balik 30 Hari harga perintis Rp490.000 sekali bayar, harga normal Rp990.000. Lanjut Bulanan opsional Rp499.000/bulan. Multi-outlet bisa dibicarakan." },
+    { keys: ["paket", "30 hari", "perintis", "layanan"], answer: "Paket Pelanggan Balik 30 Hari adalah layanan yang kami jalankan untuk outlet: pasang QR, latih kasir, kumpulkan data dengan persetujuan, kirim 1 promo, lalu laporkan hasilnya." },
+    { keys: ["harga", "pricing", "biaya", "490", "990"], answer: "Harga perintis Rp490.000 sekali bayar untuk 30 hari, dari harga normal Rp990.000. Khusus 5 outlet pertama." },
+    { keys: ["bulanan", "lanjut", "350"], answer: "Lanjutan Bulanan Rp350.000 per bulan, dengan kampanye berkelanjutan, monitoring, dan optimasi berdasarkan data yang sudah terkumpul." },
     { keys: ["area", "wilayah", "lokasi", "cover", "cakupan", "indonesia", "surabaya", "sidoarjo", "jawa", "luar kota"], answer: "JagaOmzet dapat digunakan untuk bisnis di seluruh Indonesia. Tidak terbatas pada kota atau wilayah tertentu." },
-    { keys: ["cocok", "usaha", "bisnis", "restoran", "cafe", "kafe", "salon", "barbershop", "laundry", "bengkel", "klinik"], answer: "JagaOmzet cocok untuk bisnis yang ingin memahami pelanggan dan memantau feedback, terutama bisnis dengan outlet seperti café, restoran, salon, barbershop, laundry, bengkel, dan klinik kecantikan." },
-    { keys: ["kasir", "pos", "point of sale"], answer: "Bukan aplikasi kasir. Fokus JagaOmzet adalah feedback pelanggan, database pelanggan, monitoring outlet, laporan, Google Review, dan aktivitas untuk membantu pelanggan kembali." },
-    { keys: ["cara kerja", "cara", "bagaimana", "scan", "qr"], answer: "Alurnya sederhana: pelanggan scan QR JagaOmzet → memberi feedback → data masuk dashboard → owner melihat pola dan menentukan tindakan." },
-    { keys: ["outlet", "multi outlet", "banyak outlet", "cabang"], answer: "JagaOmzet dirancang untuk owner yang ingin memantau kondisi beberapa outlet dari satu dashboard. Paket awal dimulai dari 1 outlet dan outlet tambahan dapat ditambahkan." },
-    { keys: ["database", "pelanggan", "customer"], answer: "Feedback dapat menjadi data pelanggan yang lebih terstruktur sehingga owner punya bahan untuk follow-up, promo, dan aktivitas repeat order." },
-    { keys: ["google", "review", "maps"], answer: "JagaOmzet membantu owner membalas ulasan Google positif maupun negatif dengan template yang konsisten." },
-    { keys: ["kupon", "promo", "return", "kembali"], answer: "JagaOmzet menyediakan fitur kupon sebagai salah satu cara memberi alasan kepada pelanggan untuk kembali." },
-    { keys: ["partner", "flex"], answer: "JagaOmzet sekarang menggunakan dua paket publik: Basic dan Pro." },
-    { keys: ["daftar", "mulai", "whatsapp", "wa"], answer: "Untuk mulai, chat WhatsApp JagaOmzet dan konsultasikan outlet Anda. Kami akan menjelaskan Paket Pelanggan Balik 30 Hari." }
+    { keys: ["cocok", "usaha", "bisnis", "restoran", "cafe", "kafe", "salon", "barbershop", "laundry", "bengkel", "klinik"], answer: "JagaOmzet cocok untuk bisnis dengan pelanggan berulang, seperti café, restoran, salon, barbershop, laundry, bengkel, dan klinik kecantikan." },
+    { keys: ["kasir", "pos", "point of sale"], answer: "Bukan aplikasi kasir. Fokus JagaOmzet adalah feedback pelanggan, data dengan persetujuan, promo repeat order, dan pelaporan." },
+    { keys: ["cara kerja", "cara", "bagaimana", "scan", "qr"], answer: "Alurnya: kami pasang QR dan latih kasir → pelanggan scan dan memberi feedback → data dirapikan → kami kirim promo → hasil dilaporkan." },
+    { keys: ["outlet", "multi outlet", "banyak outlet", "cabang"], answer: "Kami bisa menjalankan program untuk beberapa outlet dan menyesuaikan target serta laporan per outlet." },
+    { keys: ["database", "pelanggan", "customer"], answer: "Data pelanggan dikumpulkan dengan persetujuan sehingga bisa dipakai untuk follow-up dan promo repeat order sesuai program." },
+    { keys: ["google", "review", "maps"], answer: "JagaOmzet melengkapi Google Review. Kami juga membantu owner membalas ulasan dengan template yang konsisten." },
+    { keys: ["kupon", "promo", "return", "kembali"], answer: "Kupon dipakai sebagai salah satu cara memberi alasan pelanggan untuk kembali. Kupon bukan imbalan untuk ulasan Google." },
+    { keys: ["daftar", "mulai", "whatsapp", "wa", "slot"], answer: "Untuk mulai, chat WhatsApp JagaOmzet dan sebutkan jenis outlet Anda. Kami jelaskan Paket Pelanggan Balik 30 Hari." }
+  ];
+
+  function normalize(value) {
+    return String(value || "").toLowerCase().trim();
+  }
+
+  function applyConfig() {
+    const textValues = {
+      hargaNormal: JO_CONFIG.hargaNormal,
+      hargaPerintis: JO_CONFIG.hargaPerintis,
+      slotPerintis: JO_CONFIG.slotPerintis,
+      targetNomor: JO_CONFIG.targetNomor,
+      lanjutBulanan: JO_CONFIG.lanjutBulanan
+    };
+
+    Object.entries(textValues).forEach(([key, value]) => {
+      document.querySelectorAll('[data-jo="' + key + '"]').forEach(el => { el.textContent = value; });
+    });
+
+    document.querySelectorAll('[data-jo-link="main"]').forEach(el => { el.href = JO_CONFIG.waLink; });
+    document.querySelectorAll('[data-jo-link="monthly"]').forEach(el => {
+      el.href = "https://wa.me/6282299582026?text=Halo%2C%20saya%20ingin%20tanya%20Lanjutan%20Bulanan%20JagaOmzet%20untuk%20outlet%20saya.";
+    });
+  }
 
   function localReply(message) {
     const text = normalize(message);
-    if (!text) return "Tulis pertanyaan Anda tentang JagaOmzet. Misalnya: harga, trial, multi-outlet, fitur, atau cara kerja.";
+    if (!text) return "Tulis pertanyaan Anda tentang JagaOmzet. Misalnya: paket, harga, multi-outlet, fitur, atau cara kerja.";
 
     let best = null;
     let score = 0;
@@ -44,7 +67,7 @@
       }
     }
 
-    return best || "Saya bisa membantu menjelaskan JagaOmzet, Paket 30 Hari, harga, fitur, multi-outlet, database pelanggan, Google Review, kupon, dan cara mulai. Coba tulis pertanyaan yang lebih spesifik.";
+    return best || "Saya bisa membantu menjelaskan Paket 30 Hari, harga, fitur, multi-outlet, database pelanggan, Google Review, kupon, dan cara mulai. Coba tulis pertanyaan yang lebih spesifik.";
   }
 
   async function remoteReply(message, history) {
@@ -276,7 +299,7 @@
         '<input class="jo-chat-input" type="text" maxlength="500" autocomplete="off" placeholder="Tulis pertanyaan..." aria-label="Pertanyaan tentang JagaOmzet" />' +
         '<button class="jo-chat-send" type="submit" aria-label="Kirim">↑</button>' +
       '</form>' +
-      '<div class="jo-chat-status">Jawaban berdasarkan informasi JagaOmzet.</div><a class="jo-chat-wa" href="https://wa.me/6282299582026?text=Halo%2C%20saya%20tertarik%20mencoba%20JagaOmzet%20Gratis%2014%20Hari." target="_blank" rel="noopener">💬 Lanjut ke WhatsApp</a>'
+      '<div class="jo-chat-status">Jawaban berdasarkan informasi JagaOmzet.</div><a class="jo-chat-wa" href="https://wa.me/6282299582026?text=Halo%2C%20saya%20mau%20ambil%20Slot%20Perintis%20JagaOmzet.%20Usaha%20saya:%20[jenis%20outlet]" target="_blank" rel="noopener">💬 Chat WhatsApp</a>'
     );
 
     document.body.appendChild(launcher);
