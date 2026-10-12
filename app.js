@@ -7,19 +7,19 @@
     slotPerintis: "5",
     targetNomor: "minimal 50 nomor pelanggan",
     lanjutBulanan: "Rp350.000",
-    waLink: "https://wa.me/6282299582026?text=Halo%2C%20saya%20mau%20ambil%20Slot%20Perintis%20JagaOmzet.%20Usaha%20saya:%20[jenis%20outlet]",
+    waLink: "https://wa.me/6282299582026?text=Halo%20JagaOmzet%2C%20saya%20tertarik%20Paket%20Pelanggan%20Balik%2030%20Hari%20Rp490.000.%20Nama%20usaha%3A%20%5Bnama%20usaha%5D.%20Lokasi%3A%20%5Bkota%5D.",
     monthlyWaLink: "https://wa.me/6282299582026?text=Halo%2C%20saya%20ingin%20tanya%20Lanjutan%20Bulanan%20JagaOmzet%20untuk%20outlet%20saya."
   };
   const WA_URL = JO_CONFIG.waLink;
 
   const localKnowledge = [
     { keys: ["paket", "30 hari", "perintis", "layanan"], answer: "Paket Pelanggan Balik 30 Hari adalah layanan yang kami jalankan untuk outlet: pasang QR, latih kasir, kumpulkan data dengan persetujuan, kirim 1 promo, lalu laporkan hasilnya." },
-    { keys: ["harga", "pricing", "biaya", "490", "990"], answer: "Harga perintis Rp490.000 sekali bayar untuk 30 hari, dari harga normal Rp990.000. Khusus 5 outlet pertama." },
+    { keys: ["harga", "pricing", "biaya", "490", "paket", "stand", "akrilik", "stiker"], answer: "Paket Pelanggan Balik 30 Hari Rp490.000 sekali bayar. Termasuk 1 stand QR akrilik meja dengan desain atau nama usaha, 1 stiker QR tahan air, setup alur QR/feedback/voucher, panduan kasir, bantuan 1 kampanye promo kepada pelanggan yang setuju menerima pesan, dan laporan akhir. Paket ini tidak menjamin angka omzet tertentu." },
     { keys: ["bulanan", "lanjut", "350"], answer: "Lanjutan Bulanan Rp350.000 per bulan, dengan kampanye berkelanjutan, monitoring, dan optimasi berdasarkan data yang sudah terkumpul." },
     { keys: ["area", "wilayah", "lokasi", "cover", "cakupan", "indonesia", "surabaya", "sidoarjo", "jawa", "luar kota"], answer: "JagaOmzet dapat digunakan untuk bisnis di seluruh Indonesia. Tidak terbatas pada kota atau wilayah tertentu." },
     { keys: ["cocok", "usaha", "bisnis", "restoran", "cafe", "kafe", "salon", "barbershop", "laundry", "bengkel", "klinik"], answer: "JagaOmzet cocok untuk bisnis dengan pelanggan berulang, seperti café, restoran, salon, barbershop, laundry, bengkel, dan klinik kecantikan." },
     { keys: ["kasir", "pos", "point of sale"], answer: "Bukan aplikasi kasir. Fokus JagaOmzet adalah feedback pelanggan, data dengan persetujuan, promo repeat order, dan pelaporan." },
-    { keys: ["cara kerja", "cara", "bagaimana", "scan", "qr"], answer: "Alurnya: kami pasang QR dan latih kasir → pelanggan scan dan memberi feedback → data dirapikan → kami kirim promo → hasil dilaporkan." },
+    { keys: ["cara kerja", "cara", "bagaimana", "scan", "qr"], answer: "Alurnya: pelanggan scan QR dan memberi feedback singkat → mengikuti alur klaim voucher kunjungan berikutnya → outlet menjalankan kampanye hanya kepada pelanggan yang setuju menerima promosi → JO merangkum aktivitas dan respons yang tercatat selama 30 hari." },
     { keys: ["outlet", "multi outlet", "banyak outlet", "cabang"], answer: "Kami bisa menjalankan program untuk beberapa outlet dan menyesuaikan target serta laporan per outlet." },
     { keys: ["database", "pelanggan", "customer"], answer: "Data pelanggan dikumpulkan dengan persetujuan sehingga bisa dipakai untuk follow-up dan promo repeat order sesuai program." },
     { keys: ["google", "review", "maps"], answer: "JagaOmzet melengkapi Google Review. Kami juga membantu owner membalas ulasan dengan template yang konsisten." },
