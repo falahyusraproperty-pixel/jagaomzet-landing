@@ -2,10 +2,7 @@
   "use strict";
 
   const JO_CONFIG = {
-    hargaNormal: "Rp990.000",
     hargaPerintis: "Rp490.000",
-    slotPerintis: "5",
-    targetNomor: "minimal 50 nomor pelanggan",
     lanjutBulanan: "Rp350.000",
     waLink: "https://wa.me/6282299582026?text=Halo%20JagaOmzet%2C%20saya%20tertarik%20Paket%20Pelanggan%20Balik%2030%20Hari%20Rp490.000.%20Nama%20usaha%3A%20%5Bnama%20usaha%5D.%20Lokasi%3A%20%5Bkota%5D.",
     monthlyWaLink: "https://wa.me/6282299582026?text=Halo%2C%20saya%20ingin%20tanya%20Lanjutan%20Bulanan%20JagaOmzet%20untuk%20outlet%20saya."
@@ -33,10 +30,7 @@
 
   function applyConfig() {
     const textValues = {
-      hargaNormal: JO_CONFIG.hargaNormal,
       hargaPerintis: JO_CONFIG.hargaPerintis,
-      slotPerintis: JO_CONFIG.slotPerintis,
-      targetNomor: JO_CONFIG.targetNomor,
       lanjutBulanan: JO_CONFIG.lanjutBulanan
     };
 
