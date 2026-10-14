@@ -4,14 +4,14 @@
   const JO_CONFIG = {
     hargaPerintis: "Rp490.000",
     lanjutBulanan: "Rp350.000",
-    waLink: "https://wa.me/6282299582026?text=Halo%20JagaOmzet%2C%20saya%20tertarik%20Paket%20Pelanggan%20Balik%2030%20Hari%20Rp490.000.%20Nama%20usaha%3A%20%5Bnama%20usaha%5D.%20Lokasi%3A%20%5Bkota%5D.",
+    waLink: "https://wa.me/6282299582026?text=Halo%2C%20saya%20mau%20klaim%20Paket%20Pelanggan%20Balik%2030%20Hari%20seharga%20Rp490.000.%20Nama%20usaha%3A%20%5BNama%20Usaha%5D.%20Kota%3A%20%5BKota%5D.",
     monthlyWaLink: "https://wa.me/6282299582026?text=Halo%2C%20saya%20ingin%20tanya%20Lanjutan%20Bulanan%20JagaOmzet%20untuk%20outlet%20saya."
   };
   const WA_URL = JO_CONFIG.waLink;
 
   const localKnowledge = [
-    { keys: ["paket", "30 hari", "perintis", "layanan", "isi", "termasuk"], answer: "Paket Pelanggan Balik 30 Hari Rp490.000 sekali bayar. Termasuk 1 stand akrilik QR meja, 1 stiker QR tahan air, setup alur QR/feedback/voucher, panduan kasir, bantuan satu kampanye promo kepada pelanggan yang setuju menerima pesan, dan laporan hari ke-30. Paket ini tidak menjamin angka omzet tertentu." },
-    { keys: ["harga", "pricing", "biaya", "490", "stand", "akrilik", "stiker"], answer: "Paket Pelanggan Balik 30 Hari Rp490.000 sekali bayar. Termasuk 1 stand QR akrilik meja dengan desain atau nama usaha, 1 stiker QR tahan air, setup alur QR/feedback/voucher, panduan kasir, bantuan satu kampanye promo kepada pelanggan yang setuju menerima pesan, dan laporan akhir. Paket ini tidak menjamin angka omzet tertentu." },
+    { keys: ["paket", "30 hari", "perintis", "layanan", "isi", "termasuk"], answer: "Paket Pelanggan Balik 30 Hari Rp490.000 sekali bayar. Termasuk setup QR digital siap cetak, alur feedback dan voucher, panduan kasir online, bantuan satu kampanye promo kepada pelanggan yang setuju menerima pesan, dan laporan hari ke-30. Stand serta stiker fisik tidak termasuk. Paket ini tidak menjamin angka omzet tertentu." },
+    { keys: ["harga", "pricing", "biaya", "490", "stand", "akrilik", "stiker"], answer: "Paket Pelanggan Balik 30 Hari Rp490.000 sekali bayar. Termasuk setup QR digital siap cetak, alur feedback dan voucher, panduan kasir online, bantuan satu kampanye promo kepada pelanggan yang setuju menerima pesan, dan laporan akhir. Stand serta stiker fisik tidak termasuk. Paket ini tidak menjamin angka omzet tertentu." },
     { keys: ["bulanan", "lanjut", "350"], answer: "Lanjutan Bulanan Rp350.000 per bulan, dengan kampanye berkelanjutan, monitoring, dan optimasi berdasarkan data yang sudah terkumpul." },
     { keys: ["area", "wilayah", "lokasi", "cover", "cakupan", "indonesia", "surabaya", "sidoarjo", "jawa", "luar kota"], answer: "JagaOmzet dapat digunakan untuk bisnis di seluruh Indonesia. Tidak terbatas pada kota atau wilayah tertentu." },
     { keys: ["cocok", "usaha", "bisnis", "restoran", "cafe", "kafe", "salon", "barbershop", "laundry", "bengkel", "klinik"], answer: "JagaOmzet cocok untuk bisnis dengan pelanggan berulang, seperti café, restoran, salon, barbershop, laundry, bengkel, dan klinik kecantikan." },
@@ -19,7 +19,8 @@
     { keys: ["cara kerja", "cara", "bagaimana", "scan", "qr"], answer: "Alurnya: pelanggan scan QR dan memberi feedback singkat → mengikuti alur klaim voucher kunjungan berikutnya → outlet menjalankan kampanye hanya kepada pelanggan yang setuju menerima promosi → JO merangkum aktivitas dan respons yang tercatat selama 30 hari." },
     { keys: ["outlet", "multi outlet", "banyak outlet", "cabang"], answer: "Kami bisa menjalankan program untuk beberapa outlet dan menyesuaikan target serta laporan per outlet." },
     { keys: ["database", "pelanggan", "customer"], answer: "Data pelanggan dikumpulkan dengan persetujuan sehingga bisa dipakai untuk follow-up dan promo repeat order sesuai program." },
-    { keys: ["google", "review", "maps"], answer: "JagaOmzet melengkapi Google Review. Kami juga membantu owner membalas ulasan dengan template yang konsisten." },
+    { keys: ["komplain", "keluhan", "peringatan", "feedback negatif"], answer: "Feedback internal dirangkum agar owner bisa mengenali pola keluhan dan menindaklanjuti lebih cepat. JagaOmzet tidak menyaring ulasan publik." },
+    { keys: ["google", "review", "maps"], answer: "JagaOmzet tidak menggantikan atau memfilter Google Review. Feedback internal membantu owner mengenali pola keluhan; pelanggan tetap bebas memberi ulasan publik." },
     { keys: ["kupon", "promo", "return", "kembali"], answer: "Kupon dipakai sebagai salah satu cara memberi alasan pelanggan untuk kembali. Kupon bukan imbalan untuk ulasan Google." },
     { keys: ["daftar", "mulai", "whatsapp", "wa", "slot"], answer: "Untuk mulai, chat WhatsApp JagaOmzet dan sebutkan jenis outlet Anda. Kami jelaskan Paket Pelanggan Balik 30 Hari." }
   ];
@@ -181,7 +182,7 @@
         dashboard: "Outlet A • 92%",
         dashboardSub: "Kepuasan pelanggan terlihat",
         actionIcon: "↗",
-        action: "Balas Review • Follow-up",
+        action: "Tindak Lanjut • Follow-up",
         actionSub: "Pengalaman positif bisa dimanfaatkan",
         resultTitle: "Feedback positif terpantau.",
         resultText: "Owner tahu pengalaman pelanggan dan bisa menindaklanjutinya."
